@@ -1,0 +1,53 @@
+{
+    "crocodilos": [
+        {
+            "id": "1",
+            "name": "joao",
+            "sex": "M",
+            "date_of_birth": "1996-11-15",
+            "age": 28
+        },
+        {
+            "id": "2",
+            "name": "joao",
+            "sex": "M",
+            "date_of_birth": "1996-11-15",
+            "age": 28
+        },
+        {
+            "id": "3",
+            "name": "joao",
+            "sex": "M",
+            "date_of_birth": "1996-11-15",
+            "age": 28
+        },
+        {
+            "id": "4",
+            "name": "joao",
+            "sex": "M",
+            "date_of_birth": "1996-11-15",
+            "age": 28
+        },
+        {
+            "id": "5",
+            "name": "joao",
+            "sex": "M",
+            "date_of_birth": "1996-11-15",
+            "age": 28
+        },
+        {
+            "id": "6",
+            "name": "joao",
+            "sex": "M",
+            "date_of_birth": "1996-11-15",
+            "age": 28
+        },
+        {
+            "id": "7",
+            "name": "joao",
+            "sex": "M",
+            "date_of_birth": "1996-11-15",
+            "age": 28
+        }
+    ]
+}
