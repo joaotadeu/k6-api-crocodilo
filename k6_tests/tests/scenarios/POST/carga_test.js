@@ -21,12 +21,14 @@ export const options = {
     }
 };
 
-export default function() {
-    const crocodilo = dadosCrocodilos[Math.floor(Math.random() * dadosCrocodilos.length)];
-    const BASE_URL = `https://test-api.k6.io/public/crocodiles/${crocodilo.id}`;
-    const response = http.get(BASE_URL);
+export default function () {
+    const BASE_URL = 'https://test-api.k6.io';
 
-    check(response, {
-        'status code 200': (r) => r.status === 200
+    const user = `${Math.random()}@gmail.com`;
+    const pass = 'user123';
+
+    const response = http.post(`${BASE_URL}/user/register/`, {
+        
     });
+
 }
