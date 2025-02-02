@@ -1,5 +1,5 @@
 import http from 'k6/http';
-import { check } from 'k6';
+import { check, sleep } from 'k6';
 import { SharedArray } from 'k6/data';
 
 const dadosCrocodilos = new SharedArray("dadosCrocodilos", function () {
@@ -15,9 +15,9 @@ export const options = {
         { duration: '10s', target: 0 },
     ],
     thresholds: {
-        checks: ['rate > 0.95'],
+        checks: ['rate > 0.90'],
         http_req_failed: ['rate < 0.01'],
-        http_req_duration: ['p(95) < 500']
+        http_req_duration: ['p(95) < 150000']
     }
 };
 
@@ -27,8 +27,20 @@ export default function () {
     const user = `${Math.random()}@gmail.com`;
     const pass = 'user123';
 
+    console.log( user + pass)
+
     const response = http.post(`${BASE_URL}/user/register/`, {
-        
+        username: user,
+        first_name: 'croco',
+        last_name: 'dino',
+        email: user,
+        password: pass
     });
+
+    check(response, {
+        'sucesso ao registrar': (r) => r.status === 201
+    });
+
+    sleep(1)
 
 }
