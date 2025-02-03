@@ -1,6 +1,7 @@
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 import { SharedArray } from 'k6/data';
+import { htmlReport } from "https://raw.githubusercontent.com/benc-uk/k6-reporter/main/dist/bundle.js";
 
 const dadosCrocodilos = new SharedArray("dadosCrocodilos", function () {
     const filePath = '/Users/joaotadeu/Documents/Workspace/JavaScript/k6/k6.io/k6_tests/tests/data/dados.json';
@@ -45,3 +46,9 @@ export default function () {
 
     sleep(1)
 }
+
+export function handleSummary(data) {
+    return {
+      "k6.io_tests.html": htmlReport(data),
+    };
+  }
