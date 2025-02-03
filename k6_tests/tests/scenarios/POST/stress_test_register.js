@@ -21,6 +21,12 @@ export const options = {
     thresholds: {
         checks: ['rate > 0.90'],
         http_req_failed: ['rate < 0.01'],
+    },
+    ext: {
+        loadimpact: {
+            projectID: '3744670',
+            name: 'K6.IO'
+        }
     }
 };
 
@@ -30,7 +36,7 @@ export default function () {
     const user = `${Math.random()}@gmail.com`;
     const pass = 'user123';
 
-    console.log( user + pass)
+    console.log(user + pass)
 
     const response = http.post(`${BASE_URL}/user/register/`, {
         username: user,
@@ -49,6 +55,6 @@ export default function () {
 
 export function handleSummary(data) {
     return {
-      "k6.io_tests.html": htmlReport(data),
+        "k6.io_tests.html": htmlReport(data),
     };
-  }
+}
